@@ -4,13 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <title>Document</title>
 </head>
 <body>
-    <div>
-        <p>
-            Курс
-        </p>
+    <div class="container">
+        <div class="text-center">
+            <h3>
+                Курс НБТ на сегодня
+            </h3>
+            <div class="course">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <!-- <td>№</td> -->
+                            <th>ISO</th>
+                            <th>Наименование валюты</th>
+                            <th>Курс</th>
+                        </tr>
+                    </thead>
+                    {{range $index, $value := .Courses}}
+                        <tr>
+                            <td>{{.ISO}}</td>
+                            <td>{{.Name}}</td>
+                            <td>{{.Kurs}}</td>
+                        </tr>
+                    {{end}}
+                </table>
+
+            </div>
+        </div>
     </div>
 </body>
 </html>
